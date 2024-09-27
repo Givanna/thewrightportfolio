@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Is Beautiful</title>
+    <link rel="stylesheet" href="/great wall of quotes/sheisbeautiful.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/Favicon/site.webmanifest">
+    <!-- Import Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="background-video" poster="/images/ballerina.jpg">
+            <source src="/images/ballerinas.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="quote-container">
+            <p class="quote">
+                “She was <span id="highlight1" class="highlight">beautiful</span>, but not like those girls in magazines. She was <span id="highlight2" class="highlight">beautiful</span>, for the way she thought. She was <span id="highlight3" class="highlight">beautiful</span>, for the sparkle in her eyes when she talked about something she loved. She was <span id="highlight4" class="highlight">beautiful</span>, for her ability to make other people smile, even if she was sad. No, she wasn't <span id="highlight5" class="highlight">beautiful</span> for something as temporary as her looks. She was <span id="highlight6" class="highlight">beautiful</span>, deep down to her soul. She is <span id="highlight7" class="highlight">beautiful</span>.”
+            </p>
+        </div>
+        <button class="back-button" onclick="window.location.href='quotes_wall.html';">Back to Quotes Wall</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const highlights = document.querySelectorAll('.highlight');
+            
+            function animateText() {
+                highlights.forEach((highlight) => {
+                    highlight.classList.add('pulse');
+                });
+            }
+            
+            animateText();
+        });
+    </script>
+</body>
+</html>

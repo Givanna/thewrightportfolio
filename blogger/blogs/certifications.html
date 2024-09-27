@@ -1,0 +1,603 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Project Management Certifications: The Path to Success</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="blog_assets/blog_css/blog-main.css">
+    <link rel="stylesheet" href="blog_assets/blog_css/blog_fontawesome-all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/Favicon/site.webmanifest">
+    <style>
+.pathfinder {
+    border-radius: 8px;
+    padding: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 600px; /* Ensures the content has a max width */
+    text-align: center; /* Centers the text content inside the box */
+    margin: 0 auto; /* Centers the .pathfinder horizontally */
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select:hover {
+    transform: translateY(2px);  /* Makes the button look pushed in */
+    outline: 0.1px solid #2ebaae;  /* Custom outline color on hover */
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#recommendations {
+    margin-top: 20px;
+}
+
+#cert-list {
+    list-style: none;
+    padding: 0;
+}
+
+#cert-list li {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#certifications {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Scroll Container */
+.scroll-container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    width: 100%;
+    padding: 10px;
+    position: relative; /* Ensure positioning for arrows */
+    cursor: pointer;
+}
+
+/* Hide default scrollbar */
+.scroll-container::-webkit-scrollbar {
+    height: 8px; /* Adjust height as needed */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+}
+
+/* Tiles Container */
+.tiles-container {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    flex-grow: 1; /* Take up available space */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    cursor: pointer;
+    padding-bottom: 40px;
+}
+
+.tile h3, .tile p {
+    text-align: center;
+
+}
+
+/* Tiles */
+.tiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: grab;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the button stays at the bottom */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px; /* Adjust as needed */
+    padding: 20px;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent shrinking of tiles */
+    
+}  
+
+.tile:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);  /* Makes the button look pushed in */
+    outline: 0.1px solid #2ebaae;  /* Custom outline color on hover */
+}
+
+.info-button {
+    margin-top: auto; /* Push the button to the bottom */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border: 0.1px solid rgba(162, 162, 162, 0.5);
+    box-shadow: 0 8px 16px rgba(109, 108, 108, 0.2);
+    font-size: 0.6em;
+	font-weight: 800;
+	height: 4.8125em;
+	letter-spacing: 0.25em;
+	line-height: 4.8125em;
+	padding: 0 2.5em;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.info-button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .tile {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .info-button {
+        width: calc(100% - 20px); /* Adjust for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .tile {
+        flex: 1 1 100%;
+    }
+
+    .info-button {
+        width: calc(100% - 20px); /* Adjust for mobile */
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body class="single is-preload">
+
+   <!-- Wrapper -->
+   <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">The Wright Blog</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <button id="dark-mode-toggle"><i id="light-bulb" class="fas fa-lightbulb"></i></button>
+                <li class="search">
+                    <a class="fa-search" href="#search">Search</a>
+                    <form id="search" method="get" action="#">
+                        <input type="text" name="query" placeholder="Search" />
+                    </form>
+                </li>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="#">Project Management Certifications</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2024-09-15">September 15, 2024</time>
+                        <a href="#" class="author"><span class="name">The Wright Portfolio</span><img src="images/avatar.jpg" alt="" /></a>
+                    </div>
+                </header>
+
+    
+
+                <p><strong>Are Certifications Worth It? 🤔</strong></p>
+                <p>Project management certifications can open new doors 🚪 for both seasoned professionals and newcomers. But are they necessary for everyone? Let’s break down some popular certifications to help you decide if they align with your career goals and needs.</p>
+
+                <h3>Top Project Management Certifications 🏆</h3>
+                <p>Here are some of the most recognized certifications in project management:</p>
+                <ul>
+                    <li><strong>Certified Associate in Project Management (CAPM)</strong>: A beginner-level certification offered by PMI, great for those just starting their career in project management.</li>
+                    <li><strong>Project Management Professional (PMP)</strong>: The gold standard in project management. It’s for professionals with experience, focusing on leadership and managing teams.</li>
+                    <li><strong>Agile Certified Practitioner (PMI-ACP)</strong>: For those working in Agile environments, this certification demonstrates expertise in Agile practices.</li>
+                    <li><strong>Scrum Master (CSM)</strong>: Ideal for individuals working on Scrum teams, this cert focuses on Agile project management frameworks.</li>
+                    <li><strong>PRINCE2</strong>: This certification is highly valued in Europe and focuses on structured project management methodologies.</li>
+                </ul>
+
+                <h3>What’s the Right Certification for You? 🎯</h3>
+                <p>Choosing the right certification depends on where you are in your career and what industries you want to work in. Here’s a quick guide:</p>
+                <ul>
+                    <li>📈 <strong>Beginner</strong>: The CAPM is perfect if you’re just starting out and want to build a strong foundation in project management.</li>
+                    <li>📚 <strong>Mid-Level</strong>: The PMP certification is ideal for professionals with a few years of experience who want to take on leadership roles.</li>
+                    <li>💡 <strong>Agile Environment</strong>: PMI-ACP or CSM are great choices if you’re working in tech or industries that emphasize Agile methodologies.</li>
+                    <li>🌍 <strong>Global Projects</strong>: PRINCE2 is particularly useful if you’re working on international projects, especially in Europe.</li>
+                </ul>
+
+                <h3>How to Prepare for Your Certification 📝</h3>
+                <p>Here are some study tips and activities to help you prepare:</p>
+                <ul>
+                    <li>📖 <strong>Study Guides</strong>: Use PMI or Scrum Alliance’s official study guides to prepare.</li>
+                    <li>🎧 <strong>Podcasts & Webinars</strong>: Keep learning while multitasking by listening to project management podcasts or joining webinars.</li>
+                    <li>🤝 <strong>Join a Study Group</strong>: Studying with others can help reinforce your knowledge and keep you motivated.</li>
+                    <li>💻 <strong>Online Practice Exams</strong>: Test yourself using mock exams to get a feel for the real thing.</li>
+                </ul>
+
+                <h3>Weighing the Costs 💰</h3>
+                <p>Certifications can be expensive, with costs ranging from $300 to $1,000 or more. Before investing, consider:</p>
+                <ul>
+                    <li>📊 <strong>Your Career Goals</strong>: Will the certification help you land a job or a promotion?</li>
+                    <li>🕒 <strong>Time Commitment</strong>: Certifications require significant time and study. Do you have the bandwidth?</li>
+                    <li>👩‍🎓 <strong>Employer Support</strong>: Some companies may sponsor your certification or reimburse the costs.</li>
+                </ul>
+                    
+            
+                    <!-- Main Content -->
+                    <div id="main">
+            
+                        <!-- Path Finder Form -->
+                        <div class="pathfinder">
+                            <h2>Find Your Ideal Certification Path</h2>
+                            
+                            <form id="pathfinder-form">
+                                <div class="form-group">
+                                    <label for="skill-level">Select Your Skill Level:</label>
+                                    <select id="skill-level" name="skill-level">
+                                        <option value="">Select...</option>
+                                        <option value="beginner">Beginner</option>
+                                        <option value="intermediate">Intermediate</option>
+                                        <option value="advanced">Advanced</option>
+                                    </select>
+                                </div>
+            
+                                <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                                    <button 
+                                        class="button large"
+                                        style="cursor: pointer; transition: all 0.2s ease;"
+                                        onmouseover="this.style.boxShadow='0 2px 5px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(2px)'; this.style.outline='0.1px solid #2ebaae';"
+                                        onmouseout="this.style.boxShadow='0 5px 10px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)'; this.style.outline='none';"
+                                    >
+                                        Find Path
+                                    </button>
+                                </div>
+                                
+                                
+                                
+                            </form>
+            
+                            <div id="recommendations" class="hidden">
+                                <h3>Recommended Certifications:</h3>
+                                <ul id="cert-list">
+                                    <!-- Recommendations will appear here -->
+                                </ul>
+                            </div>
+                        </div>
+            
+                    </div>
+            
+
+            <!-- Certification Tiles Section -->
+<section id="certifications">
+    <h2>Explore Project Management Certifications</h2>
+    <div class="scroll-container">
+        <!-- Directly include all tiles inside the tiles-container -->
+        <div class="tiles-container">
+            <div class="tile" id="project-plus">
+                <h3>Project+</h3>
+                <p>Beginner</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="csm">
+                <h3>CSM</h3>
+                <p>Beginner</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="capm">
+                <h3>CAPM</h3>
+                <p>Beginner</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="prince2">
+                <h3>PRINCE2 Foundation</h3>
+                <p>Beginner</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="pmp">
+                <h3>PMP</h3>
+                <p>Path: Experience + Exam</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="prince2">
+                <h3>PRINCE2</h3>
+                <p>Path: Training + Exam</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="prince2-practitioner-tile">
+                <h3>PRINCE2 Practitioner</h3>
+                <p>Path: Training + Exam</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="cpd-tile">
+                <h3>CPD</h3>
+                <p>Path: Training + Exam</p>
+                <button class="info-button">More Info</button>
+            </div>
+            <div class="tile" id="apm-tile">
+                <h3>APM</h3>
+                <p>Path: Training + Exam</p>
+                <button class="info-button">More Info</button>
+            </div>
+         </div>
+    </section>
+
+
+   <!-- Modal for detailed information -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <p><strong>Cost:</strong> <span id="modal-cost"></span></p>
+        <p><strong>Website:</strong> <a id="modal-website" href="#" target="_blank"></a></p>
+        <p><strong>Requirements:</strong> <span id="modal-requirements"></span></p>
+    </div>
+</article>
+
+<section id="footer">
+    <div class="container">
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; The Wright Blog. All rights reserved.</li>
+        </ul>
+    </div>
+</section>
+
+</div>
+
+    <!-- Scripts -->
+    <script src="blog_assets/blog_js/blog-jquery.min.js"></script>
+    <script src="blog_assets/blog_js/blog-browser"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('pathfinder-form');
+    const recommendations = document.getElementById('recommendations');
+    const certList = document.getElementById('cert-list');
+    
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const skillLevel = document.getElementById('skill-level').value;
+        
+        const paths = {
+            'beginner': [
+                'Certified ScrumMaster (CSM)',
+                'Project Management Professional (PMP) - CAPM',
+                'PRINCE2 Foundation'
+            ],
+            'intermediate': [
+                'Certified Agile Project Manager',
+                'PRINCE2 Practitioner',
+                'PMP Certification'
+            ],
+            'advanced': [
+                'Program Management Professional (PgMP)',
+                'Portfolio Management Professional (PfMP)',
+                'Certified Project Manager (CPM)'
+            ]
+        };
+
+        certList.innerHTML = '';
+        if (skillLevel && paths[skillLevel]) {
+            recommendations.classList.remove('hidden');
+            paths[skillLevel].forEach(cert => {
+                const li = document.createElement('li');
+                li.textContent = cert;
+                certList.appendChild(li);
+            });
+        } else {
+            recommendations.classList.add('hidden');
+        }
+    });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const tiles = document.querySelectorAll('.tile');
+    const modal = document.getElementById('modal');
+    const closeBtn = document.querySelector('.close');
+    const title = document.getElementById('modal-title');
+    const description = document.getElementById('modal-description');
+    const cost = document.getElementById('modal-cost');
+    const website = document.getElementById('modal-website');
+    const requirements = document.getElementById('modal-requirements');
+
+    const data = {
+        'project-plus': {
+            title: 'Project+',
+            description: 'Project+ is a certification for entry-level project managers.',
+            cost: '$250',
+            website: 'https://www.comptia.org/certifications/project',
+            requirements: 'No specific prerequisites required.'
+        },
+        csm: {
+            title: 'Certified ScrumMaster (CSM)',
+            description: 'The CSM certification demonstrates your understanding of Scrum and your ability to lead Scrum teams.',
+            cost: '$995',
+            website: 'https://www.scrumalliance.org/get-certified/scrummaster',
+            requirements: 'Attend a 2-day CSM course.'
+        },
+        pmp: {
+            title: 'PMP Certification',
+            description: 'The PMP certification is a globally recognized certification for project managers.',
+            cost: '$555',
+            website: 'https://www.pmi.org/certifications/project-management-pmp',
+            requirements: '4,500 hours of project management experience and 35 hours of project management education.'
+        },
+        prince2: {
+            title: 'PRINCE2',
+            description: 'PRINCE2 is a structured project management method and practitioner certification program.',
+            cost: '$1,000',
+            website: 'https://www.axelos.com/certifications/prince2',
+            requirements: 'Completion of PRINCE2 Foundation and Practitioner courses.'
+        }
+    };
+
+    tiles.forEach(tile => {
+        tile.addEventListener('click', () => {
+            const id = tile.id;
+            const certification = data[id];
+            title.textContent = certification.title;
+            description.textContent = certification.description;
+            cost.textContent = certification.cost;
+            website.href = certification.website;
+            website.textContent = certification.website;
+            requirements.textContent = certification.requirements;
+            modal.style.display = 'block';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+</script>
+<script>
+    const scrollContainer = document.getElementById('scroll-container');
+    let isMouseDown = false;
+    let startX;
+    let scrollLeft;
+
+    scrollContainer.addEventListener('mousedown', (e) => {
+        isMouseDown = true;
+        scrollContainer.classList.add('active');
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+        isMouseDown = false;
+        scrollContainer.classList.remove('active');
+    });
+
+    scrollContainer.addEventListener('mouseup', () => {
+        isMouseDown = false;
+        scrollContainer.classList.remove('active');
+    });
+
+    scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isMouseDown) return; // Exit if not mouse down
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2; // Adjust scroll speed as needed
+        scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+</script>
+<script>
+// Get the tiles container and the scroll arrows
+    const tilesContainer = document.querySelector('.tiles-container');
+    const leftArrow = document.getElementById('left-arrow');
+    const rightArrow = document.getElementById('right-arrow');
+    
+    // Scroll left when left arrow is clicked
+    leftArrow.addEventListener('click', () => {
+        tilesContainer.scrollBy({
+            left: -200, // Adjust scroll distance as needed
+            behavior: 'smooth'
+        });
+    });
+    
+    // Scroll right when right arrow is clicked
+    rightArrow.addEventListener('click', () => {
+        tilesContainer.scrollBy({
+            left: 200, // Adjust scroll distance as needed
+            behavior: 'smooth'
+        });
+    });
+    </script>
+    </body>
+    </html>
+
+    

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write It On Your Heart</title>
+    <link rel="stylesheet" href="writeitonyourheart.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/Favicon/site.webmanifest">
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop id="background-video" onerror="showFallbackImage()">
+            <source src="/great wall of quotes/media/startanewday.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img src="/great wall of quotes/media/startanewday.jpg" alt="Fallback Image" class="fallback-image">
+    </div>
+
+    <div class="content">
+        <div class="quote-container">
+            <p class="quote-text">
+                “Write it on your heart that every day is the best day in the year. He is rich who owns the day, and no one owns the day who allows it to be invaded with fret and anxiety. Finish every day and be done with it. You have done what you could. Some blunders and absurdities, no doubt crept in. Forget them as soon as you can, tomorrow is a new day; begin it well and serenely, with too high a spirit to be cumbered with your old nonsense. This new day is too dear, with its hopes and invitations, to waste a moment on the yesterdays.”
+                <br><br>
+                ― Ralph Waldo Emerson
+            </p>
+        </div>
+
+        <div class="reflection-box-container">
+            <h2>Daily Reflection</h2>
+            <textarea class="reflection-box" id="reflection-box" placeholder="Write your thoughts or intentions for today..."></textarea>
+            <button class="reflection-submit" onclick="saveReflection()">Start Your Day</button>
+            <p id="confirmation-message" style="display:none; color: #fff; margin-top: 15px;"></p>
+            <button class="back-to-quotes" onclick="window.location.href='quotes-wall.html'">Back to Quotes Wall</button>
+        </div>
+    </div>
+
+    <script>
+        function saveReflection() {
+            // Array of daily affirmations
+            const affirmations = [
+                "Today is going to be a great day!",
+                "I am confident and capable of achieving my goals.",
+                "I radiate positivity and attract success.",
+                "I choose happiness and gratitude every day.",
+                "I am in control of my emotions and my destiny.",
+                "Every day is a fresh start full of opportunities."
+            ];
+
+            // Get the value from the reflection box
+            var reflection = document.getElementById('reflection-box').value;
+
+            // Save the reflection in local storage (or send to server)
+            localStorage.setItem('dailyReflection', reflection);
+
+            // Clear the reflection box
+            document.getElementById('reflection-box').value = '';
+
+            // Select a random affirmation
+            var affirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+
+            // Display the affirmation in the confirmation message
+            document.getElementById('confirmation-message').innerHTML = `Your reflection has been saved. Have a great day! <br><br><strong>Daily Affirmation:</strong> ${affirmation}`;
+            document.getElementById('confirmation-message').style.display = 'block';
+        }
+
+        function showFallbackImage() {
+            document.querySelector('.fallback-image').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

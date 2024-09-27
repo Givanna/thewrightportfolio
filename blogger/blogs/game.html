@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Response Scenario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .scenario {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            width: 30%;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .options button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            display: none;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Risk Response Scenario</h1>
+        <div id="scenario" class="scenario">
+            <p>You are creating a new website and the go-live date is tomorrow. The hosting site goes down, and the ETA for restoration is 5 hours before your go-live. Do you:</p>
+        </div>
+        <div id="options" class="options">
+            <button onclick="chooseOption('delayLaunch')">Delay the Launch</button>
+            <button onclick="chooseOption('findHosting')">Scramble to Find Another Hosting Site</button>
+        </div>
+        <div id="result" class="result"></div>
+        <button id="restart-btn" class="hidden" onclick="restartGame()">Restart Scenario</button>
+    </div>
+    <script>
+        let currentStage = 0;
+        let currentChoice = '';
+        let canChoose = true;
+
+        function chooseOption(choice) {
+            currentChoice = choice;
+            currentStage = 0;
+            canChoose = true;
+            showScenario();
+        }
+
+        function showScenario() {
+            const scenarioDiv = document.getElementById("scenario");
+            const optionsDiv = document.getElementById("options");
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.display = 'none';
+
+            if (currentChoice === 'delayLaunch') {
+                if (currentStage === 0) {
+                    scenarioDiv.innerHTML = "<p>You chose to delay the launch. Stakeholders are concerned about the negative impact on sales. Do you:</p>";
+                    optionsDiv.innerHTML = `
+                        <button onclick="checkAnswer('explain')">Explain the Need for Quality Over Speed</button>
+                        <button onclick="checkAnswer('promise')">Promise to Deliver Additional Features Later</button>
+                        <button onclick="checkAnswer('deflect')">Deflect Blame to Technical Issues</button>
+                    `;
+                } else if (currentStage === 1) {
+                    scenarioDiv.innerHTML = "<p>After explaining, the stakeholders want assurance that this won't happen again. Do you:</p>";
+                    optionsDiv.innerHTML = `
+                        <button onclick="checkAnswer('createPlan')">Create a Comprehensive Risk Management Plan</button>
+                        <button onclick="checkAnswer('ignore')">Ignore Their Concerns</button>
+                        <button onclick="checkAnswer('reassure')">Reassure Them Without a Formal Plan</button>
+                    `;
+                } else if (currentStage === 2) {
+                    scenarioDiv.innerHTML = "<p>After presenting the plan, you are questioned about resource allocation. Do you:</p>";
+                    optionsDiv.innerHTML = `
+                        <button onclick="checkAnswer('justify')">Justify with Data-Driven Insights</button>
+                        <button onclick="checkAnswer('overcommit')">Overcommit to Meet Their Demands</button>
+                        <button onclick="checkAnswer('downplay')">Downplay the Importance of Resources</button>
+                    `;
+                }
+            } else if (currentChoice === 'findHosting') {
+                if (currentStage === 0) {
+                    scenarioDiv.innerHTML = "<p>You scramble to find another hosting site. You find a site with a history of outages but better pricing. Do you:</p>";
+                    optionsDiv.innerHTML = `
+                        <button onclick="checkAnswer('choose')">Choose the Host for Quick Setup</button>
+                        <button onclick="checkAnswer('consultTeam')">Consult with Your Team First</button>
+                        <button onclick="checkAnswer('analyzeRisks')">Conduct a Risk Analysis Before Deciding</button>
+                    `;
+                } else if (currentStage === 1) {
+                    scenarioDiv.innerHTML = "<p>You chose a new host, but you encounter configuration issues. Do you:</p>";
+                    optionsDiv.innerHTML = `
+                        <button onclick="checkAnswer('blameHost')">Blame the New Host Publicly</button>
+                        <button onclick="checkAnswer('resolveIssues')">Work with Support to Resolve Issues</button>
+                        <button onclick="checkAnswer('document')">Document Issues for Future Reference</button>
+                    `;
+                } else if (currentStage === 2) {
+                    scenarioDiv.innerHTML = "<p>As issues escalate, you get complaints from clients. Do you:</p>";
+                    optionsDiv.innerHTML = `
+                        <button onclick="checkAnswer('address')">Address Complaints Immediately</button>
+                        <button onclick="checkAnswer('delegate')">Delegate the Task to Your Team</button>
+                        <button onclick="checkAnswer('ignoreComplaints')">Ignore Complaints to Focus on Solutions</button>
+                    `;
+                }
+            }
+            optionsDiv.style.display = 'block';
+        }
+
+        function checkAnswer(answer) {
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.display = 'none';
+
+            if (!canChoose) return;
+
+            if (currentChoice === 'delayLaunch') {
+                if (currentStage === 0) {
+                    if (answer === 'explain') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForDelayStage(0, answer)} <button onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'block';
+                    }
+                } else if (currentStage === 1) {
+                    if (answer === 'createPlan') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForDelayStage(1, answer)} <button onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'block';
+                    }
+                } else if (currentStage === 2) {
+                    if (answer === 'justify') {
+                        showFinalOutcome('You effectively navigated the stakeholder concerns, leading to a successful launch!');
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForDelayStage(2, answer)} <button onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'block';
+                    }
+                }
+            } else if (currentChoice === 'findHosting') {
+                if (currentStage === 0) {
+                    if (answer === 'analyzeRisks') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForFindHostingStage(0, answer)} <button onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'block';
+                    }
+                } else if (currentStage === 1) {
+                    if (answer === 'resolveIssues') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForFindHostingStage(1, answer)} <button onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'block';
+                    }
+                } else if (currentStage === 2) {
+                    if (answer === 'address') {
+                        showFinalOutcome('You addressed client complaints promptly, ensuring a successful launch and client satisfaction!');
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForFindHostingStage(2, answer)} <button onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'block';
+                    }
+                }
+            }
+        }
+
+        function disableButtons() {
+            const buttons = document.querySelectorAll('.options button');
+            buttons.forEach(button => button.disabled = true);
+            canChoose = false;
+        }
+
+        function getFeedbackForDelayStage(stage, answer) {
+            const feedback = {
+                0: {
+                    'promise': "Making promises without a plan may worsen stakeholder trust.",
+                    'deflect': "Deflecting blame can lead to accountability issues."
+                },
+                1: {
+                    'ignore': "Ignoring concerns only increases frustration and damages relationships.",
+                    'reassure': "Reassuring without a plan is unprofessional."
+                },
+                2: {
+                    'overcommit': "Overcommitting may lead to burnout and unmet expectations.",
+                    'downplay': "Downplaying resource needs can jeopardize the project."
+                }
+            };
+            return feedback[stage][answer] || "Try again!";
+        }
+
+        function getFeedbackForFindHostingStage(stage, answer) {
+            const feedback = {
+                0: {
+                    'choose': "Choosing quickly can lead to poor service.",
+                    'consultTeam': "Consulting is wise, but can slow down decisions."
+                },
+                1: {
+                    'blameHost': "Blaming others damages professional reputation.",
+                    'document': "Documentation is useful but won't solve immediate issues."
+                },
+                2: {
+                    'delegate': "Delegating can lead to miscommunication.",
+                    'ignoreComplaints': "Ignoring complaints can lead to client loss."
+                }
+            };
+            return feedback[stage][answer] || "Try again!";
+        }
+
+        function showFinalOutcome(outcome) {
+            const scenarioDiv = document.getElementById("scenario");
+            const optionsDiv = document.getElementById("options");
+            const resultDiv = document.getElementById("result");
+            optionsDiv.style.display = 'none';
+            scenarioDiv.innerHTML = `<p>${outcome}</p>`;
+            resultDiv.innerHTML = '';
+            document.getElementById("restart-btn").classList.remove("hidden");
+        }
+
+        function tryAgain() {
+            const optionsDiv = document.getElementById("options");
+            optionsDiv.style.display = 'block';
+            canChoose = true; // Reset ability to choose
+            showScenario(); // Show the current scenario again
+        }
+
+        function restartGame() {
+            const scenarioDiv = document.getElementById("scenario");
+            const optionsDiv = document.getElementById("options");
+            const resultDiv = document.getElementById("result");
+            const restartBtn = document.getElementById("restart-btn");
+
+            scenarioDiv.innerHTML = "<p>You are creating a new website and the go-live date is tomorrow. The hosting site goes down, and the ETA for restoration is 5 hours before your go-live. Do you:</p>";
+            resultDiv.innerHTML = '';
+            resultDiv.style.display = 'none';
+            optionsDiv.innerHTML = '<button onclick="chooseOption(\'delayLaunch\')">Delay the Launch</button><button onclick="chooseOption(\'findHosting\')">Scramble to Find Another Hosting Site</button>';
+            optionsDiv.style.display = 'block';
+            restartBtn.classList.add("hidden");
+            currentStage = 0;
+            currentChoice = '';
+            canChoose = true; // Reset ability to choose
+        }
+    </script>
+</body>
+</html>

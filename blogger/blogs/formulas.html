@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Essential Formulas in Project Management</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="blog_assets/blog_css/blog-main.css">
+    <link rel="stylesheet" href="blog_assets/blog_css/blog_fontawesome-all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/Favicon/site.webmanifest">
+    <style>
+        #formulas-container, #definitions-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        #formulas, #definitions {
+            display: flex;
+            flex-direction: column;
+            margin: 0 20px;
+        }
+
+        #formulas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #definitions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .draggable, .droppable {
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #21b2a6;
+            background-color: #f0f8ff;
+            text-align: center;
+            width: 250px;
+            box-sizing: border-box;
+        }
+
+        .draggable {
+            cursor: grab;
+        }
+
+        .droppable {
+            border: 2px dashed #ccc;
+        }
+
+        .success {
+            background-color: #8bc34a;
+        }
+
+        .error {
+            background-color: #e57373;
+        }
+
+        .reset-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #f44336;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .reset-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .retry {
+            cursor: grab;
+            background-color: #f0f8ff;
+            border: 2px solid #21b2a6;
+        }
+
+</style>
+</head>
+<body class="single is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">The Wright Blog</a></h1>
+            <nav class="links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <button id="dark-mode-toggle"><i id="light-bulb" class="fas fa-lightbulb"></i></button>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Search</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="#">Project Management Formulas Made Easy! 🧮</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2024-09-15">September 15, 2024</time>
+                        <a href="#" class="author"><span class="name">The Wright Portfolio</span><img src="images/avatar.jpg" alt="" /></a>
+                    </div>
+                </header>
+
+                <!-- Resized image -->
+                <span class="image featured"><img src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?w=640&h=480" alt="Project Planning" /></span>
+
+                <p><strong>Let’s Talk Numbers! 🔢</strong></p>
+                <p>Hey there, project managers! You know that moment when your project feels like it's going smoothly, and then *bam*, you realize you need to calculate some fancy formulas? 😅 Don't worry, I’ve got you covered! Here are some of the most common project management formulas you’ll need to track your project’s success. Ready? Let’s dive in! 🚀</p>
+
+                <!-- Another resized image -->
+                <span class="image featured"><img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?w=640&h=480" alt="Using PM Formulas" /></span>
+
+                <h3>Earned Value (EV) 🏆</h3>
+                <p>Earned Value helps you figure out how much of your project’s value you’ve completed so far. Think of it like a progress tracker 🎯.</p>
+                <p><strong>Formula:</strong> EV = % of work completed × Budget at Completion (BAC)</p>
+                <p><strong>Example:</strong> If you’ve completed 50% of a project with a total budget of $100,000, then EV = 0.5 × 100,000 = $50,000!</p>
+
+                <h3>Planned Value (PV) 📅</h3>
+                <p>This is what you should have completed by now, according to your project plan 📈. It's like looking at your progress map.</p>
+                <p><strong>Formula:</strong> PV = % of planned work completed × BAC</p>
+                <p><strong>Example:</strong> If by month 3 you planned to complete 60% of your project, and the BAC is $100,000, then PV = 0.6 × 100,000 = $60,000.</p>
+
+                <!-- Another resized image -->
+                <span class="image featured"><img src="https://images.pexels.com/photos/3184290/pexels-photo-3184290.jpeg?w=640&h=480" alt="Tracking Progress" /></span>
+
+                <h3>Cost Performance Index (CPI) 💸</h3>
+                <p>Ever wonder if you’re getting bang for your buck? The CPI shows you how efficiently you’re spending money.</p>
+                <p><strong>Formula:</strong> CPI = EV / Actual Cost (AC)</p>
+                <p><strong>Example:</strong> If your Earned Value is $50,000, but you've only spent $45,000 so far, then CPI = 50,000 / 45,000 = 1.11. (You're doing great! 🎉)</p>
+
+                <h3>Schedule Performance Index (SPI) 🕒</h3>
+                <p>The SPI tells you how well you're sticking to the schedule ⏰. It’s like the GPS of your project timeline!</p>
+                <p><strong>Formula:</strong> SPI = EV / PV</p>
+                <p><strong>Example:</strong> If your EV is $50,000 but your PV is $60,000, SPI = 50,000 / 60,000 = 0.83 (which means you're behind schedule 😬).</p>
+
+                <!-- Drag and Drop Activity -->
+                <h3>Drag the Formula and Match it to the Right Definition!</h3>
+                <p>Drag the formulas below and drop them into the correct definition box. It’s like a puzzle, but for your brain! 🧠✨</p>
+
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div id="formulas-container">
+                        <div id="formulas">
+                            <div id="formula1" class="draggable" draggable="true">Earned Value (EV) = % Complete x Budget</div>
+                            <div id="formula2" class="draggable" draggable="true">Cost Variance (CV) = EV - AC</div>
+                            <div id="formula3" class="draggable" draggable="true">Schedule Variance (SV) = EV - PV</div>
+                        </div>
+                    </div>
+
+                    <div id="definitions-container">
+                        <div id="definitions">
+                            <div id="definition1" class="droppable" data-correct="Earned Value (EV) = % Complete x Budget">Calculates the value of work completed</div>
+                            <div id="definition2" class="droppable" data-correct="Cost Variance (CV) = EV - AC">Measures cost performance</div>
+                            <div id="definition3" class="droppable" data-correct="Schedule Variance (SV) = EV - PV">Indicates schedule performance</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 20px;">
+                    <button id="resetButton" class="button large next">Reset</button>
+                </div>
+
+
+            <div>
+                <!-- Closing -->
+                <h3>Ready to Level Up? 💪</h3>
+                <p>These formulas help keep your projects on track by giving you valuable insights into cost, schedule, and performance. Whether you're planning your next sprint or checking in on a project halfway through, a quick formula check will ensure you're on the right path! 🛤️</p>
+            </div>
+        </div>
+
+
+                 <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; The Wright Blog. All rights reserved.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const resetButton = document.getElementById('resetButton');
+                    
+                        // Initialize drag-and-drop functionality
+                        initializeDragDrop();
+                    
+                        // Set up reset button click event
+                        resetButton.addEventListener('click', resetDragDrop);
+                    
+                        function initializeDragDrop() {
+                            document.querySelectorAll('.draggable').forEach(item => {
+                                item.addEventListener('dragstart', dragStart);
+                            });
+                    
+                            document.querySelectorAll('.droppable').forEach(item => {
+                                item.addEventListener('dragover', dragOver);
+                                item.addEventListener('drop', drop);
+                                item.addEventListener('dragleave', () => {
+                                    item.classList.remove('success');
+                                });
+                            });
+                        }
+                    
+                        function dragStart(event) {
+                            event.dataTransfer.setData('text/plain', event.target.id);
+                        }
+                    
+                        function dragOver(event) {
+                            event.preventDefault();
+                        }
+                    
+                        function drop(event) {
+                            event.preventDefault();
+                            const formulaId = event.dataTransfer.getData('text/plain');
+                            const formula = document.getElementById(formulaId);
+                            const droppedOn = event.target;
+                    
+                            if (droppedOn.classList.contains('droppable')) {
+                                if (formula.innerText === droppedOn.getAttribute('data-correct')) {
+                                    droppedOn.classList.add('success');
+                                    droppedOn.classList.remove('error');
+                                } else {
+                                    droppedOn.classList.add('error');
+                                    formula.classList.add('error');
+                                    setTimeout(() => {
+                                        droppedOn.classList.remove('error');
+                                        formula.classList.remove('error');
+                                    }, 1000); // Reset after 1 second
+                                }
+                            }
+                        }
+                    
+                        function resetDragDrop() {
+                            // Clear droppable areas and restore original text
+                            document.querySelectorAll('.droppable').forEach(droppable => {
+                                const correctText = droppable.getAttribute('data-correct');
+                                droppable.textContent = correctText;
+                                droppable.classList.remove('success', 'error');
+                            });
+                    
+                            // Re-add draggable items to their original position
+                            const formulas = [
+                                'Earned Value (EV) = % Complete x Budget',
+                                'Cost Variance (CV) = EV - AC',
+                                'Schedule Variance (SV) = EV - PV'
+                            ];
+                    
+                            const formulasContainer = document.getElementById('formulas');
+                            formulasContainer.innerHTML = ''; // Clear existing draggable items
+                    
+                            formulas.forEach((formula, index) => {
+                                const draggable = document.createElement('div');
+                                draggable.id = `formula${index + 1}`;
+                                draggable.className = 'draggable';
+                                draggable.draggable = true;
+                                draggable.textContent = formula;
+                                draggable.addEventListener('dragstart', dragStart);
+                                draggable.addEventListener('dragend', () => {
+                                    draggable.classList.remove('dragging');
+                                });
+                    
+                                formulasContainer.appendChild(draggable);
+                            });
+                        }
+                    });
+                    </script>
+                    <script>
+                        // Toggle Dark Mode
+                        const darkModeToggle = document.getElementById('dark-mode-toggle');
+                        const lightBulb = document.getElementById('light-bulb');
+                        
+                        darkModeToggle.addEventListener('click', function() {
+                            document.body.classList.toggle('dark-mode');
+                            if (document.body.classList.contains('dark-mode')) {
+                                lightBulb.classList.replace('fa-lightbulb', 'fa-lightbulb');
+                            } else {
+                                lightBulb.classList.replace('fa-lightbulb', 'fa-lightbulb');
+                            }
+                        });
+                    </script>
+                    
+                    
+                
+            </article>
+
+        </div>
+    </div>
+</body>
+</html>

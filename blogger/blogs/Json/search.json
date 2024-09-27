@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Home",
+        "url": "/thewrightblog.html",
+        "content": "All blogs, Great wall of quotes."
+    },
+    {
+        "title": "Finding A Community",
+        "url": "/blogger/blogs/community.html",
+        "content": "Project management and PMI."
+    },
+    {
+        "title": "Services",
+        "url": "/services.html",
+        "content": "We offer a wide range of services to meet your needs."
+    },
+    {
+        "title": "Contact",
+        "url": "/contact.html",
+        "content": "Get in touch with us through our contact page."
+    }
+]

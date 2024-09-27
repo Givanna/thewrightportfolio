@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Between The Pages Of A Book</title>
+    <link rel="stylesheet" href="read.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/Favicon/site.webmanifest">
+</head>
+<body>
+    <div class="book-container">
+        <img src="media/bookofquotes.png" id="book-cover" alt="Closed Book" class="book-image">
+        <img src="media/openquotes.png" id="book-pages" alt="Open Book" class="book-image hidden">
+    </div>
+
+    <button class="open-button" onclick="openBook()">Open Book</button>
+    <button class="close-button hidden" onclick="closeBook()">Close Book</button>
+    <button class="back-button" onclick="goBack()">Back to Quotes Wall</button>
+
+    <script>
+        function openBook() {
+            document.getElementById('book-cover').classList.add('hidden');
+            document.getElementById('book-pages').classList.remove('hidden');
+            document.querySelector('.open-button').classList.add('hidden');
+            document.querySelector('.close-button').classList.remove('hidden');
+        }
+
+        function closeBook() {
+            document.getElementById('book-cover').classList.remove('hidden');
+            document.getElementById('book-pages').classList.add('hidden');
+            document.querySelector('.open-button').classList.remove('hidden');
+            document.querySelector('.close-button').classList.add('hidden');
+        }
+
+        function goBack() {
+            window.location.href = "quotes_wall.html"; // Update this to your quotes wall file name
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,725 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #444;
+    
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1em;
+    margin: 0;
+}
+
+header h6 {
+    font-size: 2em;
+    line-height: 1.25em;
+    text-align: center;
+}
+
+.blog-post {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0; /* Ensure no gap between items */
+}
+
+.blog-post section {
+    flex: 1 1 calc(50% - 20px); /* Two columns with space */
+    padding: 20px;
+    border-bottom: 1px solid #dddddd; /* Light gray border */
+    margin-bottom: 0; /* No extra space below */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.blog-post section:last-child {
+    border-bottom: none; /* Remove border from the last section */
+}
+
+.blog-post h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.blog-post p {
+    font-size: 1em;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.subscribe-section {
+    width: 100%; /* Full width */
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #dddddd; /* Light gray border */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin-top: 20px; /* Space above */
+}
+.subscribe-section h6 {
+    margin-bottom: 0em; /* Adjust this to decrease space between header and paragraph */
+}
+
+.subscribe-section p {
+    margin-top: 0em; /* Remove any space between header and paragraph */
+}
+
+.subscribe-button {
+    font-size: 1em;
+    padding: 10px 20px;
+    color: #000000; /* Black text */
+    background-color: #ffffff; /* White background */
+    border: 2px solid #000000; /* Black border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.subscribe-button:hover {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+}
+
+@media screen and (max-width: 800px) {
+    .blog-post section {
+        flex: 1 1 100%; /* Full width on small screens */
+    }
+}
+
+/* Aestic */
+body {
+    background: #f9f9f9;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif; /* Or another serif font */
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+.blog-post section {
+    padding: 20px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 20px; /* Add this line */
+}
+h2 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.subscribe-button {
+    font-size: 1em;
+    padding: 10px 20px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.subscribe-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px; /* Adjusted padding */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.blog-post section {
+    padding: 20px;
+    border-bottom: 1px solid #dddddd;
+    border-radius: 5px; /* Add rounded corners */
+}
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    .subscribe-button {
+        font-size: 0.9em; /* Adjust button size */
+    }
+}
+.blog-post section {
+    padding: 20px;
+    border-bottom: 1px solid #dddddd;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.blog-post section:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.01); /* Slight scale effect on hover */
+}
+.blog-post h2 i {
+    margin-right: 10px;
+    color: #000000;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    border-radius: 8px; /* Rounded corners for container */
+    margin-bottom: 80px; /* Add margin bottom to create space */
+    margin-top: 80px;
+.subscribe-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+    #blog h1 {
+        height: inherit;
+        line-height: inherit;
+        padding: 0 0 0 1.5em;
+        white-space: nowrap;
+    }
+
+        #blog h1 a {
+            font-size: 0.7em;
+        }
+
+    #blog .links {
+        -moz-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        border-left: solid 1px rgba(160, 160, 160, 0.3);
+        height: inherit;
+        line-height: inherit;
+        margin-left: 1.5em;
+        overflow: hidden;
+        padding-left: 1.5em;
+    }
+
+        #blog .links ul li {
+            border-left: solid 1px rgba(160, 160, 160, 0.3);
+            line-height: 1;
+            margin-left: 1em;
+            padding-left: 1em;
+        }
+
+            #blog .links ul li:first-child {
+                border-left: 0;
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            #blog .links ul li a {
+                border-bottom: 0;
+                font-family: "Raleway", Helvetica, sans-serif;
+                font-size: 0.7em;
+                font-weight: 400;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+            }
+
+    #blog .main {
+        height: inherit;
+        line-height: inherit;
+        text-align: right;
+    }
+
+        #blog .main ul {
+            height: inherit;
+            line-height: inherit;
+        }
+
+            #blog .main ul li {
+                border-left: solid 1px rgba(160, 160, 160, 0.3);
+                height: inherit;
+                line-height: inherit;
+                white-space: nowrap;
+            }
+
+                #blog .main ul li > * {
+                    display: block;
+                    float: left;
+                }
+
+                #blog .main ul li > a {
+                    text-decoration: none;
+                    border-bottom: 0;
+                    color: #aaaaaa;
+                    overflow: hidden;
+                    position: relative;
+                    text-indent: 4em;
+                    width: 4em;
+                }
+
+                    #blog .main ul li > a:before {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        line-height: 1;
+                        text-transform: none !important;
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                    }
+
+                    #blog .main ul li > a:before {
+                        display: block;
+                        height: inherit;
+                        left: 0;
+                        line-height: inherit;
+                        position: absolute;
+                        text-align: center;
+                        text-indent: 0;
+                        top: 0;
+                        width: inherit;
+                    }
+
+    #blog form {
+        margin: 0;
+    }
+
+        #blog form input {
+            display: inline-block;
+            height: 2.5em;
+            position: relative;
+            top: -2px;
+            vertical-align: middle;
+        }
+
+    #blog #search {
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+        #blog #search input {
+            width: 12em;
+        }
+
+        #blog #search.visible {
+            max-width: 12.5em;
+            opacity: 1;
+            padding: 0 0.5em 0 0;
+        }
+
+    @media screen and (max-width: 980px) {
+
+        #blog .links {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 736px) {
+
+        #blog {
+            height: 2.75em;
+            line-height: 2.75em;
+        }
+
+            #blog h1 {
+                padding: 0 0 0 1em;
+            }
+
+            #header .main .search {
+                display: none;
+            }
+
+    }
+}
+/* General styling for all images */
+.post .image img {
+    width: 100%; /* Ensure images are responsive on smaller screens */
+    height: auto;
+}
+
+/* Fixed size for images on desktop */
+@media (min-width: 1024px) {
+    .post .image img {
+        width: 515px; /* Set the width to 515px */
+        height: 341px; /* Set the height to 341px */
+        object-fit: cover; /* Ensure the image covers the specified dimensions without distortion */
+    }
+}
+
+/* Header */
+
+body {
+    padding-top: 3.5em;
+}
+
+#header {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+    height: 3.5em;
+    left: 0;
+    line-height: 3.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+    #header a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    #header ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+        #header ul li {
+            display: inline-block;
+            padding-left: 0;
+        }
+
+    #header h1 {
+        height: inherit;
+        line-height: inherit;
+        padding: 0 0 0 1.5em;
+        white-space: nowrap;
+    }
+
+        #header h1 a {
+            font-size: 0.7em;
+        }
+
+    #header .links {
+        -moz-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        border-left: solid 1px rgba(160, 160, 160, 0.3);
+        height: inherit;
+        line-height: inherit;
+        margin-left: 1.5em;
+        overflow: hidden;
+        padding-left: 1.5em;
+    }
+
+        #header .links ul li {
+            border-left: solid 1px rgba(160, 160, 160, 0.3);
+            line-height: 1;
+            margin-left: 1em;
+            padding-left: 1em;
+        }
+
+            #header .links ul li:first-child {
+                border-left: 0;
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            #header .links ul li a {
+                border-bottom: 0;
+                font-family: "Raleway", Helvetica, sans-serif;
+                font-size: 0.7em;
+                font-weight: 400;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+            }
+
+    #header .main {
+        height: inherit;
+        line-height: inherit;
+        text-align: right;
+    }
+
+        #header .main ul {
+            height: inherit;
+            line-height: inherit;
+        }
+
+            #header .main ul li {
+                border-left: solid 1px rgba(160, 160, 160, 0.3);
+                height: inherit;
+                line-height: inherit;
+                white-space: nowrap;
+            }
+
+                #header .main ul li > * {
+                    display: block;
+                    float: left;
+                }
+
+                #header .main ul li > a {
+                    text-decoration: none;
+                    border-bottom: 0;
+                    color: #aaaaaa;
+                    overflow: hidden;
+                    position: relative;
+                    text-indent: 4em;
+                    width: 4em;
+                }
+
+                    #header .main ul li > a:before {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        line-height: 1;
+                        text-transform: none !important;
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                    }
+
+                    #header .main ul li > a:before {
+                        display: block;
+                        height: inherit;
+                        left: 0;
+                        line-height: inherit;
+                        position: absolute;
+                        text-align: center;
+                        text-indent: 0;
+                        top: 0;
+                        width: inherit;
+                    }
+
+    #header form {
+        margin: 0;
+    }
+
+        #header form input {
+            display: inline-block;
+            height: 2.5em;
+            position: relative;
+            top: -2px;
+            vertical-align: middle;
+        }
+
+    #header #search {
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+        #header #search input {
+            width: 12em;
+        }
+
+        #header #search.visible {
+            max-width: 12.5em;
+            opacity: 1;
+            padding: 0 0.5em 0 0;
+        }
+
+    @media screen and (max-width: 980px) {
+
+        #header .links {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 736px) {
+
+        #header {
+            height: 2.75em;
+            line-height: 2.75em;
+        }
+
+            #header h1 {
+                padding: 0 0 0 1em;
+            }
+
+            #header .main .search {
+                display: none;
+            }
+
+    }
+
+/* Wrapper */
+
+#wrapper {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    margin: 0 auto;
+    max-width: 100%;
+    opacity: 1;
+    padding: 4.5em;
+    width: 90em;
+}
+
+    body.is-menu-visible #wrapper {
+        opacity: 0.15;
+    }
+
+    @media screen and (max-width: 1680px) {
+
+        #wrapper {
+            padding: 3em;
+        }
+
+    }
+
+    @media screen and (max-width: 1280px) {
+
+        #wrapper {
+            display: block;
+        }
+
+    }
+
+    @media screen and (max-width: 736px) {
+
+        #wrapper {
+            padding: 1.5em;
+        }
+
+    }
+
+    body.single #wrapper {
+        display: block;
+    }
+    /* Menu */
+
+	#menu {
+		-moz-transform: translateX(25em);
+		-webkit-transform: translateX(25em);
+		-ms-transform: translateX(25em);
+		transform: translateX(25em);
+		-moz-transition: -moz-transform 0.5s ease, visibility 0.5s;
+		-webkit-transition: -webkit-transform 0.5s ease, visibility 0.5s;
+		-ms-transition: -ms-transform 0.5s ease, visibility 0.5s;
+		transition: transform 0.5s ease, visibility 0.5s;
+		-webkit-overflow-scrolling: touch;
+		background: #ffffff;
+		border-left: solid 1px rgba(160, 160, 160, 0.3);
+		box-shadow: none;
+		height: 100%;
+		max-width: 80%;
+		overflow-y: auto;
+		position: fixed;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		width: 25em;
+		z-index: 10002;
+	}
+
+		#menu > * {
+			border-top: solid 1px rgba(160, 160, 160, 0.3);
+			padding: 3em;
+		}
+
+			#menu > * > :last-child {
+				margin-bottom: 0;
+			}
+
+		#menu > :first-child {
+			border-top: 0;
+		}
+
+		#menu .links {
+			list-style: none;
+			padding: 0;
+		}
+
+			#menu .links > li {
+				border: 0;
+				border-top: dotted 1px rgba(160, 160, 160, 0.3);
+				margin: 1.5em 0 0 0;
+				padding: 1.5em 0 0 0;
+			}
+
+				#menu .links > li a {
+					display: block;
+					border-bottom: 0;
+				}
+
+					#menu .links > li a h3 {
+						-moz-transition: color 0.2s ease;
+						-webkit-transition: color 0.2s ease;
+						-ms-transition: color 0.2s ease;
+						transition: color 0.2s ease;
+						font-size: 0.7em;
+					}
+
+					#menu .links > li a p {
+						font-family: "Raleway", Helvetica, sans-serif;
+						font-size: 0.6em;
+						font-weight: 400;
+						letter-spacing: 0.25em;
+						margin-bottom: 0;
+						text-decoration: none;
+						text-transform: uppercase;
+					}
+
+					#menu .links > li a:hover h3 {
+						color: #2ebaae;
+					}
+
+				#menu .links > li:first-child {
+					border-top: 0;
+					margin-top: 0;
+					padding-top: 0;
+				}
+
+		body.is-menu-visible #menu {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+			visibility: visible;
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#menu > * {
+				padding: 1.5em;
+			}
+        }

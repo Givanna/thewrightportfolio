@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/Favicon/site.webmanifest">
+    <title>Edgar Allan Poe</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+            font-family: 'IM Fell English', serif; /* Old manuscript serif font */
+            color: #000; /* Black text color */
+            background-color: hsla(27, 99%, 28%, 0.925); /* Fallback background color */
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Place video behind the content */
+        }
+
+        .manuscript {
+            width: 70%; /* Narrowed width */
+            max-width: 700px; /* Adjusted max-width */
+            padding: 40px;
+            position: absolute;
+            top: 20%; /* Higher on the page */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .quote {
+            margin: 20px 0;
+            font-size: 1.6em;
+            line-height: 1.5;
+            white-space: nowrap; /* Ensure the text doesn't wrap */
+            overflow: hidden; /* Hide overflowing text */
+            border-right: .15em solid #000; /* Black cursor effect */
+            white-space: nowrap;
+            display: inline-block;
+            max-width: 80%;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive; /* Handwritten font for signature */
+            font-size: 1.4em;
+            margin-top: 40px;
+            color: #000; /* Black text color for signature */
+        }
+
+        .back-button {
+            background-color: #8b5e3c; /* Weathered book cover color */
+            color: #f4f1e5;
+            border: 2px solid #6e4a2f;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            position: fixed;
+            bottom: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #f4f1e5; /* Invert colors on hover */
+            color: #8b5e3c;
+            border: 2px solid #8b5e3c;
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay muted loop>
+        <source src="/images/typewriter.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="manuscript">
+        <div class="quote" id="quote1"></div>
+        <div class="quote" id="quote2"></div>
+        <div class="quote" id="quote3"></div>
+        <p class="signature">— Edgar Allan Poe</p>
+    </div>
+    <button class="back-button" onclick="window.location.href='quotes.html'">Back to Quotes Wall</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quotes = [
+                "We loved with a love that was more than love.",
+                "I became insane, with long intervals of horrible sanity.",
+                "There is no beauty without some strangeness."
+            ];
+
+            function typeWriter(element, text, speed, callback) {
+                let i = 0;
+                element.textContent = ''; // Clear the content initially
+                const interval = setInterval(() => {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                        if (callback) callback();
+                    }
+                }, speed);
+            }
+
+            function startTypingEffect() {
+                let delay = 0;
+                quotes.forEach((quote, index) => {
+                    setTimeout(() => {
+                        typeWriter(document.getElementById(`quote${index + 1}`), quote, 50);
+                    }, delay);
+                    delay += quote.length * 50 + 3000; // Adjust delay to fit the length of the quote and additional pause
+                });
+            }
+
+            startTypingEffect();
+        });
+    </script>
+</body>
+</html>

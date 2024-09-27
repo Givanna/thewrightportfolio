@@ -1,0 +1,724 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>The Importance of Risk Management in Project Management</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="blog_assets/blog_css/blog-main.css">
+    <link rel="stylesheet" href="blog_assets/blog_css/blog_fontawesome-all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/Favicon/site.webmanifest">
+    <style>
+        #risk-register-table td {
+            padding: 5px;
+        }
+    </style>
+    <style>
+        .risk-container {
+     max-width: 100%;
+     margin-top: 45px;
+     margin-bottom: 45px;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+     height: 15em;
+     display: flex;
+     flex-direction: column; /* Align children vertically */
+     background-color: #f9f9f9;
+     text-align: center;
+    
+ }
+ 
+ .scenario {
+     margin-bottom: 0px;
+ }
+ 
+ .options {
+     display: flex; /* Use flexbox for button alignment */
+     justify-content: center; /* Center the buttons */
+     flex-wrap: wrap; /* Allow buttons to wrap if necessary */
+     margin-top: auto; /* Push buttons to the bottom if needed */
+ }
+ 
+ .options button {
+     margin: 0 10px 10px 10px; 
+     border: none;
+     cursor: pointer;
+     text-align: center;
+     border: 0.1px solid rgba(162, 162, 162, 0.5);
+     box-shadow: 0 8px 16px rgba(109, 108, 108, 0.2);
+     font-size: 0.6em;
+     font-weight: 800;
+     height: 4.8125em;
+     letter-spacing: 0.25em;
+     line-height: 4.8125em;
+     padding: 0 2.5em;
+     text-decoration: none;
+     text-transform: uppercase;
+     white-space: nowrap;
+     display: inline-block;
+ }
+ 
+ .options button:hover {
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+     transform: translateY(2px);  /* Makes the button look pushed in */
+     outline: 0.1px solid #2ebaae;  /* Custom outline color on hover */
+ }
+ 
+         .result {
+ 
+             display: none;
+             
+         }
+         .hidden {
+             display: none;
+         }
+ 
+ 
+        .monitor {
+                    width: 70%;
+                    height: 500px;
+                    overflow-y: scroll;
+                    border: solid 1em #333;
+                    border-radius: .5em;
+                    background-color: white;
+                    position: relative;
+                    margin: 0 auto;
+                    padding-top: 10px;
+                }
+                
+                .monitor::-webkit-scrollbar {
+                    width: 15px;
+                }
+                
+                .monitor::-webkit-scrollbar-thumb {
+                    background: #666;
+                }
+                
+                .monitor::-webkit-scrollbar-track {
+                    background-color: #888;
+                }
+                
+                /* Stand for the monitor */
+                .stand {
+                    position: relative;
+                    width: 515px;
+                    margin: 0 auto;
+                    height: 50px;
+                }
+                
+                /* Stand base (rectangular part under the monitor) */
+                .stand:before {
+                    content: "";
+                    display: block;
+                    background: #222;
+                    width: 150px;
+                    height: 50px;
+                    margin: 0 auto;
+                }
+                
+                /* Bottom part of the stand */
+                .stand:after {
+                    content: "";
+                    display: block;
+                    background: #333;
+                    border-top-left-radius: .5em;
+                    border-top-right-radius: .5em;
+                    width: 300px;
+                    height: 15px;
+                    margin: -2px auto; /* Adjust margin to remove space between the stand parts */
+                }
+/* Keyboard */
+.keyboard {
+    width: 30%;
+    margin: 35px 400px auto; /* Center the keyboard */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between key rows */
+    background: #444;
+    border-radius: 5px;
+    padding: 5px; /* Add padding around the keyboard */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Rows of keys */
+.key-row {
+    display: flex;
+    justify-content: center; /* Center the keys */
+}
+
+/* Individual keys */
+.keyboard-key {
+    width: 30px; /* Adjust key width */
+    height: 30px;
+    background: #666;
+    margin: 2px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+    display: flex; /* Flex to center text */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    color: white; /* Text color */
+    font-weight: bold; /* Bold text */
+}
+
+/* Wider key for space bar */
+.keyboard-key.wide {
+    width: 200px; /* Adjust width for space bar */
+}
+
+/* Mouse */
+.mouse {
+    width: 80px; /* Adjust width for vertical mouse */
+    height: 120px; /* Increase height for vertical shape */
+    background: #666;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-left: 850px; /* Space between keyboard and mouse */
+    margin-top: -120px; /* Move the mouse upwards */
+    border-radius: 40px 40px 40px 40px; /* Round corners while keeping sides straight */
+}
+
+/* Mouse button */
+.mouse:before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 40px;
+    background: #777;
+    border-radius: 5px;
+    margin: 5px auto; /* Center the mouse button */
+    position: relative; /* Position relative for proper placement */
+    top: 5px; /* Adjust position for the button */
+}
+    </style>
+</head>
+<body class="single is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <header id="header">
+            <h1><a href="thewrightblog.html" target="_blank">Givanna Wright</a></h1>
+            <nav class="links">
+                <ul>
+                    <li><a href="agile.html" target="_blank">Agile</a></li>
+                    <li><a href="certifications.html" target="_blank">Certifications</a></li>
+                    <li><a href="formulas.html" target="_blank">Formulas</a></li>
+                    <li><a href="rm.html" target="_blank">Risk Management</a></li>
+                    <li><a href="waterfall.html" target="_blank">Waterfall</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <button id="dark-mode-toggle"><i id="light-bulb" class="fas fa-lightbulb"></i></button>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Search</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+       <!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="/blogger/allblogs.html" target="_blank">
+											<h3>All Blogs</h3>
+											<p>Check out all blog posts</p>
+										</a>
+									</li>
+									<li>
+										<a href="/great wall of quotes/allquotes.html" target="_blank">
+											<h3>All Quotes</h3>
+											<p>The Great Wall of Quotes</p>
+										</a>
+									</li>
+									<li>
+										<a href="/blogger/allpm.html">
+											<h3>PM Fundamentals</h3>
+											<p>Explore the core of project management</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Fun Stuff</h3>
+											<p>Life isn't just about work <br>click here for work-life balance</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="https://givanna.github.io/thewrightportfolio/" target="_blank" class="button large fit">The Wright Portfolio</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="#">The Importance of Risk Management in Project Management</a></h2>
+                    </div>
+                    <div class="meta">
+                        <time class="published" datetime="2024-09-15">September 15, 2024</time>
+                        <a href="#" class="author"><span class="name">The Wright Blog</span></a>
+                    </div>
+                </header>
+
+                <p>Every project faces uncertainties, and these uncertainties can pose risks. Effective risk management is essential to project success because it helps foresee, mitigate, and handle potential roadblocks before they jeopardize your project. In this post, we’ll explore why risk management is vital, different risk management methods, the key documents used, how to mitigate risks, and what to do when risks are unavoidable or realized.</p>
+
+                <h3>1. Why is Risk Management Necessary?</h3>
+                <p>Risk management helps ensure that your project stays on track, within budget, and meets its deadlines, even when unexpected challenges arise. By identifying and preparing for risks early, you can reduce their impact and prevent costly delays or failures. Without risk management, projects are more likely to experience disruptions, scope creep, or even complete failure.</p>
+
+                <h3>2. Risk Management Methods</h3>
+                <p>There are several approaches to risk management, each offering different strategies for handling risks:</p>
+                <p><strong>Risk Identification:</strong> Identifying potential risks through brainstorming, expert judgment, and reviewing past projects.</p>
+                <p><strong>Risk Assessment:</strong> Analyzing the likelihood and potential impact of each identified risk.</p>
+                <p><strong>Risk Prioritization:</strong> Categorizing risks by their potential impact and likelihood, helping the team focus on the most critical ones.</p>
+                <p><strong>Risk Mitigation:</strong> Developing strategies to reduce the probability of high-priority risks occurring.</p>
+                <p><strong>Risk Monitoring:</strong> Continuously tracking identified risks and being alert for new ones throughout the project lifecycle.</p>
+
+                <h3>3. Key Documents for Tracking and Managing Risks</h3>
+                <p>To maintain clarity and communication, several documents are typically used to track and manage risks:</p>
+                <p><strong>Risk Register:</strong> A living document that logs each risk, its probability, potential impact, mitigation strategy, owner, and status. It’s the primary tool for tracking risks throughout the project.</p>
+                <p><strong>Risk Breakdown Structure (RBS):</strong> A hierarchical representation of project risks, organized by categories such as technical, external, organizational, and project management risks.</p>
+                <p><strong>Risk Response Plan:</strong> A detailed plan outlining the steps to take if a particular risk materializes, including responsibilities and timelines.</p>
+
+                <h3>4. Mitigating Risks</h3>
+                <p>Risk mitigation is the process of reducing the likelihood or impact of a risk. There are several strategies to consider:</p>
+                <p><strong>Avoidance:</strong> If possible, eliminate the risk entirely by adjusting the project plan, scope, or resources.</p>
+                <p><strong>Transference:</strong> Shift the risk to a third party, such as using insurance or outsourcing risk-heavy components.</p>
+                <p><strong>Mitigation:</strong> Implement actions to reduce the likelihood or impact, such as adding buffer time to the schedule or increasing the budget for a critical part of the project.</p>
+                <p><strong>Acceptance:</strong> Sometimes, risks are unavoidable, and the best course of action is to prepare for them by setting aside contingency reserves.</p>
+
+                <div style="padding: 10px;"></div>
+
+                <h3>5. Activity: Risk Register</h3>
+                <p>Now it’s your turn! Create a risk register for an upcoming project.</p>
+                
+                <div style="text-align: center; margin: 20px;">
+                    <strong>Project Scenario:</strong><br>
+                    You are managing a software development project for a new mobile application.<br>
+                    The project timeline is six months, and you are working with a team of developers, designers, and testers.
+                </div>
+                
+                <!-- Monitor -->
+                <div class="monitor">      
+                    <h2 style="text-align: center;">Risk Register</h2>
+                    <div style="background-color: #f9f9f9; border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">Risk</th>
+                                    <th style="background-color: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">Probability</th>
+                                    <th style="background-color: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">Impact</th>
+                                    <th style="background-color: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">Mitigation Strategy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Risk Description" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Low/Medium/High" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Low/Medium/High" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Mitigation Strategy" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Risk Description" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Low/Medium/High" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Low/Medium/High" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Mitigation Strategy" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Risk Description" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Low/Medium/High" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Low/Medium/High" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                    <td style="border: 1px solid #ccc; padding: 5px;">
+                                        <textarea placeholder="Mitigation Strategy" style="width: 100%; border: none; resize: none; overflow-wrap: break-word;"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                
+                <!-- Stand for the monitor -->
+                <div class="stand"></div>
+                <div class="input-container">
+                    <!-- Keyboard -->
+                    <div class="keyboard">
+                        <div class="key-row">
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                        </div>
+                        <div class="key-row">
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                            <div class="keyboard-key"></div>
+                        </div>
+                        <div class="key-row">
+                            <div class="keyboard-key wide"></div>
+                        </div>
+                    </div>
+                
+                    <!-- Mouse -->
+                    <div class="mouse"></div>
+                </div>
+
+                <div style="padding: 30px;"></div>
+
+                <h3>6. What to Do When You Cannot Avoid a Risk</h3>
+                <p>Sometimes, despite all efforts, a risk cannot be avoided. When faced with an unavoidable risk:</p>
+                <p><strong>Plan for Contingencies:</strong> Have contingency plans in place. These are predetermined actions and resources set aside to handle risks that materialize.</p>
+                <p><strong>Prepare with Contingency Reserves:</strong> Set aside time, budget, and resources that can be used to absorb the impact of unavoidable risks.</p>
+                <p><strong>Communication:</strong> Ensure all stakeholders are aware of the risk and the plan to handle it. Open communication helps avoid surprises and enables collective problem-solving.</p>
+
+                <h3>7. How to Handle Risks When They Occur</h3>
+                <p>Even the best risk management plans won’t prevent all risks from happening. When a risk does occur:</p>
+                <p><strong>Activate Your Response Plan:</strong> Execute the risk response plan developed during the planning phase. This should outline the immediate steps needed to contain and minimize the damage.</p>
+                <p><strong>Monitor and Adjust:</strong> Continuously assess the situation as it evolves. New risks or consequences might emerge, requiring adjustments to the plan.</p>
+                <p><strong>Learn and Document:</strong> After managing the risk, document what worked and what didn’t. This creates a valuable resource for future projects and updates your risk management strategies for the rest of the project.</p>
+                <p><strong>Communicate Progress:</strong> Keep stakeholders informed throughout the risk event and the recovery process.</p>
+
+
+                <div class="risk-container">
+                    <h1>Risk Response Scenario</h1>
+                    <div id="scenario" class="scenario">
+                        <p>You are creating a new website and the go-live date is tomorrow. The hosting site goes down, and the ETA for restoration is 5 hours before your go-live. Do you:</p>
+                    </div>
+                    <div id="options" class="options">
+                        <button onclick="chooseOption('delayLaunch')">Delay the Launch</button>
+                        <button onclick="chooseOption('findHosting')">Find Another Hosting Site</button>
+                    </div>
+                    <div id="result" class="result"></div>
+                    <button id="restart-btn" class="hidden" onclick="restartGame()">Restart Scenario</button>
+                </div>
+                
+            </article>
+
+            <!-- Footer -->
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="https://github.com/Givanna" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/givannawright/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="mailto:givannawright@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    <li><a href="https://givanna.github.io/thewrightportfolio/" class="icon solid fa-book" target="_blank"><span class="label">The Wright Portfolio</span></a></li>
+                    <li><a href="https://gitlab.com/givannawright" class="icon brands fa-gitlab" target="_blank"><span class="label">Gitlab</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; The Wright Blog. All rights reserved.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+    <script>
+        let currentStage = 0;
+        let currentChoice = '';
+        let canChoose = true;
+    
+        function chooseOption(choice) {
+            currentChoice = choice;
+            currentStage = 0;
+            canChoose = true;
+            showScenario();
+        }
+    
+        function showScenario() {
+            const scenarioDiv = document.getElementById("scenario");
+            const optionsDiv = document.getElementById("options");
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.display = 'none';
+    
+            if (currentChoice === 'delayLaunch') {
+                if (currentStage === 0) {
+                    scenarioDiv.innerHTML = "<p>You chose to delay the launch. Stakeholders are concerned about the negative impact on sales. Do you:</p>";
+                    optionsDiv.innerHTML = 
+                        '<button onclick="checkAnswer(\'explain\')">Explain the Need for Quality Over Speed</button>' +
+                        '<button onclick="checkAnswer(\'promise\')">Promise to Deliver Additional Features Later</button>' +
+                        '<button onclick="checkAnswer(\'deflect\')">Deflect Blame to Technical Issues</button>';
+                } else if (currentStage === 1) {
+                    scenarioDiv.innerHTML = "<p>After explaining, the stakeholders want assurance that this won't happen again. Do you:</p>";
+                    optionsDiv.innerHTML = 
+                        '<button onclick="checkAnswer(\'createPlan\')">Create a Comprehensive Risk Management Plan</button>' +
+                        '<button onclick="checkAnswer(\'ignore\')">Ignore Their Concerns</button>' +
+                        '<button onclick="checkAnswer(\'reassure\')">Reassure Them Without a Formal Plan</button>';
+                } else if (currentStage === 2) {
+                    scenarioDiv.innerHTML = "<p>After presenting the plan, you are questioned about resource allocation. Do you:</p>";
+                    optionsDiv.innerHTML = 
+                        '<button onclick="checkAnswer(\'justify\')">Justify with Data-Driven Insights</button>' +
+                        '<button onclick="checkAnswer(\'overcommit\')">Overcommit to Meet Their Demands</button>' +
+                        '<button onclick="checkAnswer(\'downplay\')">Downplay the Importance of Resources</button>';
+                }
+            } else if (currentChoice === 'findHosting') {
+                if (currentStage === 0) {
+                    scenarioDiv.innerHTML = "<p>You scramble to find another hosting site. You find a site with a history of outages but better pricing. Do you:</p>";
+                    optionsDiv.innerHTML = 
+                        '<button onclick="checkAnswer(\'choose\')">Choose the Host for Quick Setup</button>' +
+                        '<button onclick="checkAnswer(\'consultTeam\')">Consult with Your Team First</button>' +
+                        '<button onclick="checkAnswer(\'analyzeRisks\')">Conduct a Risk Analysis Before Deciding</button>';
+                } else if (currentStage === 1) {
+                    scenarioDiv.innerHTML = "<p>You chose a new host, but you encounter configuration issues. Do you:</p>";
+                    optionsDiv.innerHTML = 
+                        '<button onclick="checkAnswer(\'blameHost\')">Blame the New Host Publicly</button>' +
+                        '<button onclick="checkAnswer(\'resolveIssues\')">Work with Support to Resolve Issues</button>' +
+                        '<button onclick="checkAnswer(\'document\')">Document Issues for Future Reference</button>';
+                } else if (currentStage === 2) {
+                    scenarioDiv.innerHTML = "<p>As issues escalate, you get complaints from clients. Do you:</p>";
+                    optionsDiv.innerHTML = 
+                        '<button onclick="checkAnswer(\'address\')">Address Complaints Immediately</button>' +
+                        '<button onclick="checkAnswer(\'delegate\')">Delegate the Task to Your Team</button>' +
+                        '<button onclick="checkAnswer(\'ignoreComplaints\')">Ignore Complaints to Focus on Solutions</button>';
+                }
+            }
+           optionsDiv.classList.add('options');
+        }
+    
+        function checkAnswer(answer) {
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.display = 'none';
+    
+            if (!canChoose) return;
+    
+            if (currentChoice === 'delayLaunch') {
+                if (currentStage === 0) {
+                    if (answer === 'explain') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForDelayStage(0, answer)} <button class='options button' onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'inline-block';
+                    }
+                } else if (currentStage === 1) {
+                    if (answer === 'createPlan') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForDelayStage(1, answer)} <button class='options button' onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'inline-block';
+                    }
+                } else if (currentStage === 2) {
+                    if (answer === 'justify') {
+                        showFinalOutcome('You effectively navigated the stakeholder concerns, leading to a successful launch!');
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForDelayStage(2, answer)} <button class='options button' onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'inline-block';
+                    }
+                }
+            } else if (currentChoice === 'findHosting') {
+                if (currentStage === 0) {
+                    if (answer === 'analyzeRisks') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForFindHostingStage(0, answer)} <button class='options button' onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'inline-block';
+                    }
+                } else if (currentStage === 1) {
+                    if (answer === 'resolveIssues') {
+                        currentStage++;
+                        showScenario();
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForFindHostingStage(1, answer)} <button class='options button' onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'inline-block';
+                    }
+                } else if (currentStage === 2) {
+                    if (answer === 'address') {
+                        showFinalOutcome('You addressed client complaints promptly, ensuring a successful launch and client satisfaction!');
+                    } else {
+                        disableButtons();
+                        resultDiv.innerHTML = `<p>Incorrect! ${getFeedbackForFindHostingStage(2, answer)} <button class='options button' onclick='tryAgain()'>Try Again</button></p>`;
+                        resultDiv.style.display = 'inline-block';
+                    }
+                }
+            }
+        }
+    
+        function disableButtons() {
+            const buttons = document.querySelectorAll('.options button');
+            buttons.forEach(button => button.disabled = true);
+            canChoose = false;
+        }
+    
+        function getFeedbackForDelayStage(stage, answer) {
+            const feedback = {
+                0: {
+                    'promise': "Making promises without a plan may worsen stakeholder trust.",
+                    'deflect': "Deflecting blame can lead to accountability issues."
+                },
+                1: {
+                    'ignore': "Ignoring concerns only increases frustration and damages relationships.",
+                    'reassure': "Reassuring without a plan is unprofessional."
+                },
+                2: {
+                    'overcommit': "Overcommitting may lead to burnout and unmet expectations.",
+                    'downplay': "Downplaying resource needs can jeopardize the project."
+                }
+            };
+            return feedback[stage][answer] || "Try again!";
+        }
+    
+        function getFeedbackForFindHostingStage(stage, answer) {
+            const feedback = {
+                0: {
+                    'choose': "Choosing quickly can lead to poor service.",
+                    'consultTeam': "Consulting is wise, but can slow down decisions."
+                },
+                1: {
+                    'blameHost': "Blaming others damages professional reputation.",
+                    'document': "Documentation is useful but won't solve immediate issues."
+                },
+                2: {
+                    'delegate': "Delegating can lead to miscommunication.",
+                    'ignoreComplaints': "Ignoring complaints can lead to client loss."
+                }
+            };
+            return feedback[stage][answer] || "Try again!";
+        }
+    
+        function showFinalOutcome(outcome) {
+            const scenarioDiv = document.getElementById("scenario");
+            const optionsDiv = document.getElementById("options");
+            const resultDiv = document.getElementById("result");
+            scenarioDiv.innerHTML = `<p>${outcome}</p>`;
+            optionsDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+            document.getElementById("restart-btn").classList.remove("hidden");
+        }
+    
+        function tryAgain() {
+            canChoose = true;
+            showScenario();
+        }
+    
+        function restartGame() {
+            currentStage = 0;
+            currentChoice = '';
+            canChoose = true;
+            document.getElementById("restart-btn").classList.add("hidden");
+            document.getElementById("result").innerHTML = '';
+            document.getElementById("scenario").innerHTML = `
+                <p>You are creating a new website and the go-live date is tomorrow. The hosting site goes down, and the ETA for restoration is 5 hours before your go-live. Do you:</p>
+            `;
+            document.getElementById("options").innerHTML = `
+                <button onclick="chooseOption('delayLaunch')">Delay the Launch</button>
+                <button onclick="chooseOption('findHosting')">Find Another Hosting Site</button>
+            `;
+            document.getElementById("options").style.display = 'block'; // Make sure the options are visible again.
+            document.getElementById("result").style.display = 'none';   // Hide any remaining result text.
+
+            let optionsDiv = document.getElementById("options");
+
+// Reset any inline styles affecting the button layout
+optionsDiv.style.display = ''; // Reset inline display to allow default CSS
+optionsDiv.style.justifyContent = ''; // Clear inline justify-content (if any)
+optionsDiv.style.flexWrap = ''; // Clear inline flex-wrap (if any)
+
+// Ensure the correct class is still applied for styling
+optionsDiv.classList.add('options'); // Reapply options class if it was removed
+
+        }
+    </script>
+    <script src="blog_assets/blog_js/blog-jquery.min.js"></script>
+    <script src="blog_assets/blog_js/blog-browser.js"></script>
+    <script src="blog_assets/blog_js/blog-breakpoints.min.js"></script>
+    <script src="blog_assets/blog_js/blog-util.js"></script>
+    <script src="blog_assets/blog_js/blog-main.js"></script>	
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const toggleButton = document.getElementById('dark-mode-toggle');
+            const lightBulbIcon = document.getElementById('light-bulb');
+            
+            // Retrieve the current theme from localStorage
+            const currentTheme = localStorage.getItem('theme') || 'light'; // Default to 'light'
+        
+            // Apply the saved theme
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                lightBulbIcon.classList.add('dark-mode-icon');
+            }
+        
+            // Handle the toggle button click
+            toggleButton.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                
+                // Determine and store the new theme
+                const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+        
+                // Toggle the light bulb icon
+                if (theme === 'dark') {
+                    lightBulbIcon.classList.add('dark-mode-icon');
+                } else {
+                    lightBulbIcon.classList.remove('dark-mode-icon');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

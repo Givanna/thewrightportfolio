@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Is Amazing</title>
+    <link rel="stylesheet" href="lifeisamazing.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="quote-container">
+        <div class="quote-overlay">
+            <p class="quote-text" id="quoteText">
+                <!-- Quote text will be typed here by JavaScript -->
+            </p>
+        </div>
+        <button class="back-button" onclick="goBack()">Back to Quotes Wall</button>
+    </div>
+    <script>
+        const quote = `“Life is amazing. And then it's awful. And then it's amazing again. And in between the amazing and awful it's ordinary and mundane and routine. Breathe in the amazing, hold on through the awful, and relax and exhale during the ordinary. That's just living heartbreaking, soul-healing, amazing, awful, ordinary life. And it's breathtakingly beautiful.” — L.R. Knost`;
+
+        function typewriter(element, text, delay = 50) {
+            let index = 0;
+            const intervalId = setInterval(() => {
+                element.innerHTML += text[index];
+                index++;
+                if (index >= text.length) {
+                    clearInterval(intervalId);
+                }
+            }, delay);
+        }
+
+        window.onload = () => {
+            const quoteElement = document.getElementById('quoteText');
+            typewriter(quoteElement, quote);
+        };
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

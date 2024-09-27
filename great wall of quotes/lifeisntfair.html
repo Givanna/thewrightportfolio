@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Isn't Fair</title>
+    <link rel="stylesheet" href="/great wall of quotes/lifeisntfair.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/Favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/Favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/Favicon/site.webmanifest">
+</head>
+<body>
+    <div class="content">
+        <div class="quote-container">
+            <p class="quote-text">
+                Life Isn’t Fair. No matter what life throws your way, no matter how unfair it may seem, refuse to play the victim. Refuse to be ruled by fear, pessimism, and negativity. Refuse to quit. Be a warrior and work through whatever life throws your way with courage, love, and positivity. And continually push forward. Because you are a survivor of the unfairness of life. You are stronger than you think. And you are capable of achieving far more than you believe.
+                <br><br>— Zero Dean
+            </p>
+        </div>
+        <div class="reflection-box-container">
+            <h2>Personal Reflection</h2>
+            <textarea id="reflection" class="reflection-box" placeholder="Take a moment to reflect on the message of this quote. How does it resonate with your own experiences? Have you faced challenges that seemed insurmountable, only to find strength you didn’t know you had? Share your thoughts or experiences in the space below. Remember, you are stronger and more capable than you realize."></textarea>
+            <button id="submit-button" class="reflection-submit">Submit</button>
+        </div>
+        <div id="confirmation-dialog" class="confirmation-dialog">
+            <div class="confirmation-content">
+                <p>Do you agree to the terms of service and are you sure you want to submit your reflection?
+                </p>
+                <p>*You're response will not be saved permanently. Once you leave this page it will be gone. They are for your personal reflection only.*</p>
+                <button id="confirm-yes" class="confirm-button">Yes</button>
+                <button id="confirm-no" class="confirm-button">No</button>
+            </div>
+        </div>
+        <div id="responses-section" class="responses-section">
+            <h2>Reflections</h2>
+            <div id="responses-list" class="responses-list"></div>
+        </div>
+        <button class="back-to-quotes">Back to Quotes Wall</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitButton = document.getElementById('submit-button');
+            const confirmationDialog = document.getElementById('confirmation-dialog');
+            const confirmYes = document.getElementById('confirm-yes');
+            const confirmNo = document.getElementById('confirm-no');
+            const responsesList = document.getElementById('responses-list');
+            const reflectionBox = document.getElementById('reflection');
+
+            submitButton.addEventListener('click', () => {
+                confirmationDialog.style.display = 'flex';
+            });
+
+            confirmYes.addEventListener('click', () => {
+                const reflectionText = reflectionBox.value.trim();
+                if (reflectionText) {
+                    const newResponse = document.createElement('div');
+                    newResponse.textContent = reflectionText;
+                    responsesList.appendChild(newResponse);
+                    reflectionBox.value = ''; // Clear the reflection box
+                }
+                confirmationDialog.style.display = 'none';
+            });
+
+            confirmNo.addEventListener('click', () => {
+                confirmationDialog.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

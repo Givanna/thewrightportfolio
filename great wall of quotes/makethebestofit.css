@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: url('/images/vintage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.quote-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center text horizontally */
+}
+
+.main-quote {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.animated-text {
+    font-family: 'Dancing Script', cursive; /* Cursive font */
+    font-weight: bold; /* Make it bold */
+    font-size: 1.6rem;
+    color: #222;
+    display: block; /* Ensure it's on a new line */
+    margin: 20px auto; /* Center it horizontally */
+    white-space: nowrap;
+    overflow: hidden; /* Hide text until it's "written" */
+    border-right: 2px solid #222; /* Simulate the pen cursor */
+    padding-right: 5px; /* Space between text and cursor */
+    animation: typing 6s steps(60, end), blink-caret 0.75s;
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 30%;
+    }
+}
+
+/* Keyframes for blinking cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #222;
+    }
+}
+
+.author {
+    font-size: 1rem;
+    text-align: right;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .main-quote {
+        font-size: 1rem;
+    }
+
+    .animated-text {
+        font-size: 1.4rem;
+    }
+}
+/* Style for the Back to Quotes Wall button */
+.back-to-quotes {
+    display: block;
+    width: fit-content;
+    margin: 20px auto; /* Center the button horizontally and add some margin */
+    padding: 10px 20px;
+    background-color: rgba(139, 69, 19, 0.5); /* Semi-transparent brown background */
+    color: #222; /* White text color */
+    border: 2px solid rgba(139, 69, 19, 0.7); /* Semi-transparent brown border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-family: 'Georgia', serif; /* Vintage font style */
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Vintage shadow effect */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.back-to-quotes:hover {
+    background-color: rgba(139, 69, 19, 0.7); /* Darker brown on hover */
+    color: #fff; /* White text color on hover */
+    border-color: rgba(139, 69, 19, 1); /* Darker brown border on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}

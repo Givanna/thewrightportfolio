@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .resume {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Visual Resume Builder</h1>
+        <form id="resumeForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="title" placeholder="Your Job Title" required>
+            <textarea id="summary" placeholder="Brief Summary" required></textarea>
+            <input type="text" id="skills" placeholder="Skills (comma separated)" required>
+            <input type="text" id="experience" placeholder="Experience (Company, Role, Year)" required>
+            <button type="submit">Generate Resume</button>
+        </form>
+
+        <div id="resume" class="resume">
+            <h2 id="resumeName"></h2>
+            <h3 id="resumeTitle"></h3>
+            <p id="resumeSummary"></p>
+            <h4>Skills</h4>
+            <ul id="resumeSkills"></ul>
+            <h4>Experience</h4>
+            <ul id="resumeExperience"></ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('resumeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get input values
+            const name = document.getElementById('name').value;
+            const title = document.getElementById('title').value;
+            const summary = document.getElementById('summary').value;
+            const skills = document.getElementById('skills').value.split(',');
+            const experience = document.getElementById('experience').value.split(',');
+
+            // Update the resume
+            document.getElementById('resumeName').innerText = name;
+            document.getElementById('resumeTitle').innerText = title;
+            document.getElementById('resumeSummary').innerText = summary;
+
+            // Clear previous skills and experience
+            document.getElementById('resumeSkills').innerHTML = '';
+            document.getElementById('resumeExperience').innerHTML = '';
+
+            // Add skills to the resume
+            skills.forEach(skill => {
+                const li = document.createElement('li');
+                li.innerText = skill.trim();
+                document.getElementById('resumeSkills').appendChild(li);
+            });
+
+            // Add experience to the resume
+            experience.forEach(exp => {
+                const li = document.createElement('li');
+                li.innerText = exp.trim();
+                document.getElementById('resumeExperience').appendChild(li);
+            });
+
+            // Show the resume
+            document.getElementById('resume').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
