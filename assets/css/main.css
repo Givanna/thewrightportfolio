@@ -4114,6 +4114,11 @@ table tbody tr:nth-child(3) {
 							font-weight: 900;
 						}
 
+						/* Dark Mode Styles */
+body.dark-mode #header nav > ul > li a:hover {
+    color: #fff; /* Dark mode icon color */
+}
+
 /* Hover Effects for Navigation Links */
 			#header nav > ul > li a:hover {
     		color: rgba(0, 0, 0, 0.192); /* Change text color on hover */
@@ -4130,6 +4135,10 @@ table tbody tr:nth-child(3) {
 						margin-left: 0;
 					}
 
+					body.dark-mode #header nav > ul > li:first-child {
+						color: #fff; /* Dark mode icon color */
+					}
+
 		#header .navPanelToggle {
 			text-decoration: none;
 			border: 0;
@@ -4139,6 +4148,10 @@ table tbody tr:nth-child(3) {
 			top: 0;
 			width: 5em;
 			display: none;
+		}
+
+		body.dark-mode #header nav > ul > li a:before {
+			color: #fff; /* Dark mode icon color */
 		}
 
 			#header .navPanelToggle:before {
@@ -4368,6 +4381,47 @@ table tbody tr:nth-child(3) {
 			left: 50%;
 			margin-left: -0.25em;
 		}
+
+		/* Dark Mode Styles */
+body.dark-mode .dropotron {
+    background: #333; /* Dark mode background */
+    color: #fff;      /* Dark mode text color */
+}
+
+body.dark-mode .dropotron li {
+    box-shadow: inset 0 1px 0 0 #555; /* Darker inset shadow */
+}
+
+body.dark-mode .dropotron a {
+    color: #fff; /* Dark mode link color */
+}
+
+/* Dark mode hover effect for list items */
+body.dark-mode .dropotron li:hover {
+    background-color: #444; /* Dark mode hover background */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Lighter box shadow on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.dropotron.level-0 {
+    margin-top: 0;
+}
+
+.dropotron.level-0:before {
+    content: '';
+    border-left: solid 0.5em transparent;
+    border-right: solid 0.5em transparent;
+    border-bottom: solid 0.5em #fff; /* Adjust as needed for dark mode */
+    display: block;
+    position: absolute;
+    top: -0.45em;
+    left: 50%;
+    margin-left: -0.25em;
+}
+
+body.dark-mode .dropotron.level-0:before {
+    border-bottom: solid 0.5em #333; /* Change to dark mode color */
+}
 		
 
 /* Banner */
