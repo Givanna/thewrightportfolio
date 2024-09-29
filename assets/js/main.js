@@ -295,6 +295,18 @@
 
 		}
 
+		document.addEventListener('DOMContentLoaded', () => {
+			const headerH6Elements = document.querySelectorAll('.header-h6');
+		
+			// Use setTimeout to ensure the CSS is applied after the elements are loaded
+			setTimeout(() => {
+				headerH6Elements.forEach((el) => {
+					el.classList.add('visible'); // Add visible class to trigger the animation
+				});
+			}, 100); // Delay to allow the initial styles to apply before showing
+		});
+		
+
 	// Banner.
 		$banner._slider(settings.banner);
 

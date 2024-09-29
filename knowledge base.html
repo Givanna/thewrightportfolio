@@ -36,9 +36,9 @@
 						<li>
 							<a href="#" class="submenu fa-angle-down">Projects</a>
 							<ul>
-								<li><a href="deployment.html" target="_blank">Deployment</a></li>
-								<li><a href="milestones.html" target="_blank">Milestones</a></li>
 								<li><a href="everto vending.html" target="_blank">Vending</a></li>
+								<li><a href="milestones.html" target="_blank">Milestones</a></li>
+								<li><a href="deployment.html" target="_blank">Deployment</a></li>
 								<li><a href="knowledge base.html" target="_blank">Knowledge Base</a></li>
 								<li><a href="replacement.html" target="_blank">Laptop Replacement</a></li>
 								<li><a href="greyhound acclimation.html" target="_blank">Greyhound Acclimation</a></li>
@@ -72,7 +72,7 @@
 
 					<!-- Content -->
 						<div class="content">
-							<a href="#" class="image fit"><img src="images/Mockup KB.jpg" alt="Classroom" /></a>
+							<img src="images/Mockup KB.jpg" alt="Classroom" class="image fit"/>
 							<h2>Challenges and Solutions</h2>
 							<ul>
 								<p><b>Gaining approval:</b>Successfully pitched the Knowledge Base project to stakeholders, highlighting the long-term benefits of improved employee retention and client satisfaction.</p>
@@ -123,7 +123,7 @@
 							</section>
 							<hr />
 							<section>
-								<a href="#" class="image fit"><img src="images/Knowledge edited.jpg" alt="" /></a>
+								<img src="images/Knowledge edited.jpg" alt="" class="image fit" />
 								<h2>Deliverables</h2>
 								<ul>
 									<li><p> A fully functional Knowledge Base accessible to all company employees.</p></li>
@@ -153,7 +153,7 @@
 				<div class="posts">
 					<section class="post">
 						<div class="content">
-							<h3>Milestone State Testng</h3>
+							<h3>Milestone State Testing</h3>
 							<p>The Milestones Testing project successfully met all deliverables on time and within budget.</p>
 							<ul class="actions">
 								<li><a href="milestones.html" target="_blank" class="button">Learn More</a></li>
@@ -162,7 +162,7 @@
 					</section>
 					<section class="post">
 						<div class="content">
-							<h3>Inaugral Knowledge Base</h3>
+							<h3>Inaugural Knowledge Base</h3>
 								<p>The implementation of the Knowledge Base significantly enhanced employee retention and client satisfaction.</p>
 							<ul class="actions">
 								<li><a href="knowledge base.html" target="_blank" class="button">Learn More</a></li>
@@ -297,93 +297,38 @@
 			</script>
 			<script>
 				document.addEventListener('DOMContentLoaded', (event) => {
-				  // Dark mode toggle logic
-				  const toggleButton = document.getElementById('dark-mode-toggle');
-				  const lightBulbIcon = document.getElementById('light-bulb');
-				  const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
-				  const lightBulbIconMobile = document.getElementById('light-bulb-mobile');
-				  const currentTheme = localStorage.getItem('theme');
-			  
-				  function updateIcons(theme) {
-					if (theme === 'dark') {
-					  lightBulbIcon.classList.remove('fa-moon');
-					  lightBulbIcon.classList.add('fa-sun');
-					  lightBulbIconMobile.classList.remove('fa-moon');
-					  lightBulbIconMobile.classList.add('fa-sun');
+					const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
+					const lightBulbIconMobile = document.getElementById('light-bulb-mobile');
+		
+					const currentTheme = localStorage.getItem('theme');
+		
+					function updateIcon(theme) {
+						if (theme === 'dark') {
+							lightBulbIconMobile.classList.remove('fa-moon');
+							lightBulbIconMobile.classList.add('fa-sun');
+						} else {
+							lightBulbIconMobile.classList.remove('fa-sun');
+							lightBulbIconMobile.classList.add('fa-moon');
+						}
+					}
+		
+					if (currentTheme) {
+						document.body.classList.add(currentTheme);
+						updateIcon(currentTheme);
 					} else {
-					  lightBulbIcon.classList.remove('fa-sun');
-					  lightBulbIcon.classList.add('fa-moon');
-					  lightBulbIconMobile.classList.remove('fa-sun');
-					  lightBulbIconMobile.classList.add('fa-moon');
+						// Default to light mode if no theme is set
+						updateIcon('light');
 					}
-				  }
-			  
-				  if (currentTheme === 'dark') {
-					document.body.classList.add('dark-mode');
-					updateIcons('dark');
-				  } else {
-					updateIcons('light');
-				  }
-			  
-				  function toggleDarkMode() {
-					document.body.classList.toggle('dark-mode');
-					const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-					localStorage.setItem('theme', theme);
-					updateIcons(theme);
-				  }
-			  
-				  toggleButton.addEventListener('click', toggleDarkMode);
-				  toggleButtonMobile.addEventListener('click', toggleDarkMode);
+		
+					toggleButtonMobile.addEventListener('click', function() {
+						document.body.classList.toggle('dark-mode');
+						const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+						updateIcon(theme);
+						localStorage.setItem('theme', theme);
+					});
 				});
-			  
-				document.addEventListener('DOMContentLoaded', function() {
-				  var searchIcon = document.querySelector('.floating-search i');
-				  var searchBox = document.querySelector('.floating-search');
-			  
-				  searchIcon.addEventListener('click', function(event) {
-					event.stopPropagation(); // Prevents click event from propagating
-					searchBox.classList.toggle('active');
-				  });
-			  
-				  document.addEventListener('click', function(event) {
-					if (!searchBox.contains(event.target)) {
-					  searchBox.classList.remove('active');
-					}
-				  });
-				});
-			  
-				document.addEventListener('DOMContentLoaded', (event) => {
-				  const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
-				  const lightBulbIconMobile = document.getElementById('light-bulb-mobile');
-				  const currentTheme = localStorage.getItem('theme');
-			  
-				  function updateIcon(theme) {
-					if (theme === 'dark') {
-					  lightBulbIconMobile.classList.remove('fa-moon');
-					  lightBulbIconMobile.classList.add('fa-sun');
-					} else {
-					  lightBulbIconMobile.classList.remove('fa-sun');
-					  lightBulbIconMobile.classList.add('fa-moon');
-					}
-				  }
-			  
-				  if (currentTheme) {
-					document.body.classList.add(currentTheme);
-					updateIcon(currentTheme);
-				  } else {
-					updateIcon('light');
-				  }
-			  
-				  toggleButtonMobile.addEventListener('click', function() {
-					document.body.classList.toggle('dark-mode');
-					const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-					updateIcon(theme);
-					localStorage.setItem('theme', theme);
-				  });
-				});
-
-			</script>
-			<script>
+			</script>	
+				<script>
 				// SiteSearch360 Configuration
 				var SiteSearch360Config = {
 				  "suggestions": {
