@@ -19,15 +19,16 @@
 		<script async src="https://js.sitesearch360.com/plugin/bundle/51649.js"></script>
 		<style>
 			@media screen and (max-width: 768px) {
-    li p a[href^="mailto:"] {
-        font-size: 13px; /* Adjust this to your desired size */
-        word-break: break-all; /* Ensure the email breaks onto the next line */
-    }
-}
-
-
-
+				/* Select all links you want to style */
+				li p a[href^="mailto:"], /* Email */
+				li p a[href^="https://www.linkedin.com/in/givannawright/"], /* LinkedIn */
+				li p a[href^="https://github.com/givanna"] /* GitHub */ {
+					font-size: 13.5px; /* Adjust this to your desired size */
+					word-break: break-all; /* Ensure the text breaks onto the next line */
+				}
+			}
 		</style>
+		
 	</head>
 
 		  <!-- Header -->
